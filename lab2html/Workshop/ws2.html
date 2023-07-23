@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        input:invalid{
+            border: red solid 4px;
+        }
+        input,
+        input:valid{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form pattern attibutes testing</h1>
+    <hr>
+    <h2>1.เป็นสระในภาษาอังกฤษเท่านั้นและมีได้ 3 ตัว </h2>
+    <form action="form-echo.php">
+        <input type="text"
+         name ="input1"
+         placeholder="input1"
+         pattern="[aeiou]{3}"
+         titile = "Username should only contain lowercase letters. e.g. john"
+        >
+    
+
+    <h2>2.ให้ขึ้นต้นตัวพิมพ์ใหญ่ ที่เหลือเป็นอักษรพิมพ์เล็กตั้งแต่ 1 ตัวขึ้นไป </h2>
+    
+        <input type="text"
+         name ="input2"
+         placeholder="input2"
+         pattern="[A-Z][a-z]+"
+         titile = "Username should only contain lowercase letters. e.g. john"
+        >
+   
+
+    <h2>3.ขึ้นต้นคำด้วย ord หรือ order ลงท้ายด้วยตัวเลข 5 ตัว </h2>
+    
+        <input type="text"
+         name ="input3"
+         placeholder="input3"
+         pattern="(ord|order)+[0-9]{5}"
+         titile = "Username should only contain lowercase letters. e.g. john"
+        >
+   
+
+    <h2>4.เป็นคำว่า frog หรือ blog หรือ clog เท่านั้น </h2>
+    
+        <input type="text"
+         name ="input4"
+         placeholder="input4"
+         pattern="(frog|blog|clog)+"
+         titile = "Username should only contain lowercase letters. e.g. john"
+        >
+    
+
+    <h2>BONUS.เป็นรหัสนักศึกษา cs เท่านั้น </h2>
+    
+        <input type="text"
+         name ="input4"
+         placeholder="input4"
+         pattern="^\d[2]+0406[0-9]{5}$"
+         titile = "Username should only contain lowercase letters. e.g. john"
+        >
+
+        <br>
+        <br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

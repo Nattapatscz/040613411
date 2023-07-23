@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  
+    <style>
+         /* Table-based layout for form */
+        td {
+            padding: 8px;
+            text-align: left;
+            border: 2px solid #919090;
+        }
+
+        
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* Adjust the button styles */
+        .login-container button {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            background-size: cover;
+        }
+
+        /* Add spacing between the table and the button */
+        .login-container {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>เข้าสู่ระบบ</h2>
+    <form action="no3p2.html" method="post" onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td><label for="username">Username:</label></td>
+                <td><input type="text" id="username" name="username" required autofocus></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="verification-code">กรุณาพิมพ์เลขตามที่ปรากฎ 1559 :</label><br>
+                <input type="number" id="verification-code" name="verification" 
+                pattern="1559" minlength="4" maxlength="4"></td>
+            </tr>
+        </table><br>
+        <div class="login-container">
+            <button type="submit"  style="background-image: url('./icon-256x256.png');"></button>
+        </div>
+
+
+    </form>
+    <script>
+        function validateForm() {
+            // Get the verification code input element
+            var verificationCodeInput = document.getElementById("verification-code");
+
+            // Get the entered verification code
+            var enteredCode = verificationCodeInput.value;
+
+            // Check if the entered code is "1559"
+            if (enteredCode !== "1559") {
+                // Display an error message (you can customize this based on your requirements)
+                alert("โปรดยืนยันรหัสยืนยันใหม่อีกครั้ง");
+
+                // Prevent form submission
+                return false;
+            }
+
+            // Proceed with form submission if verification code is correct
+            return true;
+        }
+    </script>
+    
+</body>
+</html>
