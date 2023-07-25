@@ -18,20 +18,20 @@
                     <input type="text" id="full-name" 
                     name="Nameuser" 
                     placeholder="กรอกชื่อ-สกุล" 
-                    required> <br>
+                    required> *<br>
                 
                     <label for="email">Email:</label> <br>
                     <input type="email" 
                     id="email" 
                     name="Email" 
-                    required> <br>
+                    required> *<br>
                 
                     <label for="phone">โทรศัพท์:</label> <br>
                     <input type="tel" 
                     id="phone" 
                     name="Tel" 
                     value="+66" 
-                    required> <br>
+                    required> *<br>
                 
                     <label for="address">ที่อยู่:</label><br>
                     <textarea id="address" 
@@ -40,7 +40,8 @@
                     <br>
                 
                     <label for="postal-code">รหัสไปรษณีย์:</label> 
-                    <input type="text" 
+                    <input type="text"
+                    style="width: 70px;" 
                     id="postal-code" 
                     name="PostalCode" 
                     pattern="[0-9]{5}" 
