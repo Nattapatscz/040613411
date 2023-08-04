@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="branchFullName">1.ชื่อเต็ม/ย่อของสาขาวิชา:</label>
+      <input type="text" placeholder="ชื่อสาขาวิชา/ย่อของสาขาวิชา" />
+      type->text
+      <br />
+      2.จำนวนเงินที่จะโอน
+      <input type="number" placeholder="จำนวนเงินที่จะโอน" min="0" />
+      type->number ใช้attribute min=0 กันเงินติดลบ
+      <br />
+      3.อาหารที่ชื่นชอบ5ชนิดที่ชื่นชอบจากมากไปน้อย
+      <input type="text" placeholder="[a-zA-Zก-๙]+(,[a-zA-Zก-๙]+){0,4}" />->
+      ชื่ออาหาร5ลำดับคั่นด้วย , (Comma)
+      <br />
+      4.ค่าไฟฟ้า3เดือนที่ผ่านมา
+      <input type="number" min="0" />type->number ใช้attribute min=0
+      กันเงินติดลบ
+      <br />
+      5.รหัสบัตรประชาชน
+      <input type="text" /> type->text แล้วไปpattern 13หลักเอา
+      <br />
+      6.ความพึงพอใจของหนังสือเล่มนี้<br />
+      <input type="radio" />มาก <input type="radio" />ปานกลาง
+      <input type="radio" />น้อย <br />
+      7.อาการป่วย<br />
+      <textarea name="" id="" cols="30" rows="10"></textarea><br />
+      8.ในช่วง3เดือนที่ผ่านมา เคยได้รับวัคซีนหรือไม่
+      <input type="radio" name="agree" id="agree" />เคยได้รับ
+      <input type="radio" name="disagree" id="disagree" />ยังไม่เคยได้รับ
+      <br />
+      9.รหัสผ่าน
+      <input type="password" name="" id="" />
+      type->password
+      <br />
+      10.เวลาเริ่มเข้าเรียนและสิ้นสุดการเรียน<input type="time" />
+      <br />
+      11.วันเวลาที่ต้องไปพบแพทย์
+      <input type="date" />
+    </form>
+  </body>
+</html>
