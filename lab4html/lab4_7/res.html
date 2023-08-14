@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        gap: 50px;
+        height: 80px;
+        width: 100%;
+        & a {
+          color: white;
+          font-size: 18px;
+          text-decoration: none;
+        }
+      }
+      section {
+        background-color: gainsboro;
+        width: 100%;
+        height: 300px;
+        font-size: 25px;
+      }
+      footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        background-color: cornflowerblue;
+        width: 100%;
+        height: 80px;
+        & a {
+          font-size: 18px;
+          color: white;
+          text-decoration: none;
+        }
+      }
+      .flex {
+        display: flex;
+        flex-direction: column;
+      }
+      @media (max-width: 480px) {
+        .flex {
+          display: block;
+        }
+        nav {
+          width: auto;
+          height: 30px;
+        }
+        section {
+          width: auto;
+          font-size: 16px;
+        }
+        footer {
+          width: auto;
+          height: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <nav>
+        <a href="">Menu1</a>
+        <a href="">Menu2</a>
+        <a href="">Menu3</a>
+      </nav>
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        delectus eos perferendis ipsum temporibus ad quia nam commodi deleniti
+        officia illum veniam voluptatibus quae aut tempora, ab explicabo porro
+        non, consequuntur consequatur voluptate assumenda! Nam rem quis veniam
+        totam laudantium explicabo ex atque dolor, quidem illum amet officiis
+        impedit voluptatem perferendis tempore eligendi quod consequatur id
+        dignissimos corporis deleniti ea? Veniam incidunt non ut nobis labore
+        voluptatibus eius magni ratione unde, distinctio earum quo sapiente
+        tenetur nam enim consectetur saepe eos ullam quasi doloremque corrupti
+        voluptas, possimus, dolorem maiores! Consequuntur atque laborum ex nam
+        amet tenetur at adipisci rem saepe?
+      </section>
+      <footer>
+        <a href="">ads1</a>
+        <a href="">ads2</a>
+        <a href="">ads3</a>
+      </footer>
+    </div>
+  </body>
+</html>

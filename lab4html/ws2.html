@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Display Property Demo</title>
+    <style>
+     .b{
+        width: 200px;
+        height: 50px;
+        margin: 10px;
+        padding: 10px;
+     }
+     .inline-display{
+        border: solid 1px #0f0;
+        background: rgb(255, 192, 192);
+        display: inline;
+    }
+    .block-display{
+        border: solid 1px #0f0;
+        background: #eeffee;
+        display: block;
+
+    }
+    .inline-block-display{
+        border: solid 1px #0000ff;
+        background: #eeffee;
+        display: inline-block;
+    }
+    div.parent{background:#eeee}
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Inline Elements</h1>
+    <div class="parent">
+      <span class="inline-display">Inline span.</span>
+      <div class="inline-display">Inline div.</div>
+      <span class="inline-display">Inline span. We have added text to this box to demonstrate what happens at the end of a line . . .</span>
+    </div>
+    <hr />
+    <h1>Block-level Elements</h1>
+    <div class="parent">
+      <div class="block-display">Block-level div.</div>
+      <span class="block-display">Block-level span.</span>
+      <div class="block-display">Block-level div.</div>
+    </div>
+    <hr />
+    <h1>Inline-block Elements</h1>
+    <div class="parent">
+      <span class="inline-block-display">Inline-block span.</span>
+      <div class="inline-block-display">Inline-block div.</div>
+      <span class="inline-block-display">Inline-block span.</span>
+      <div class="inline-block-display">Inline-block div.</div>
+    </div>
+  </body>
+</html>

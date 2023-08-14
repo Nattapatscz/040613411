@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body{
+            background-color: gray;
+            text-align: center;
+            
+        }
+        .flexible {
+            background-color: white;
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content:center;
+        }
+
+        .product {
+            justify-content: center;
+            margin-bottom: 20px;
+            padding :10px 20px;
+            
+        }
+
+        .content {
+            background-color: gainsboro;
+            max-width: 400px;
+            padding: 25px 10px;
+            margin: 5 auto;
+            border-radius: 12px;
+        }
+
+        .wrap {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-flex;
+            justify-content: center;
+            padding:10px 24px;
+        
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            background-image: url('imgs/cart-shopping-solid\ \(1\).svg');
+            background-size: 1em auto;
+            background-repeat: no-repeat;
+            background-position: 10px;
+            padding-left: 4em; /* Ensure space for the icon */
+        }
+
+       
+        @media (min-width: 768px) {
+            .flexible {
+                flex-direction: row;
+            }
+
+            .product {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            .content {
+            background-color: gainsboro;
+            max-width: 600px;
+            padding-bottom: 10px;
+            padding: 15px 5px;
+            margin: 0 auto;
+            border-radius: 12px;
+            
+        }
+
+        @media (min-width: 1080px) {
+            .flexible {
+                flex-direction: row;
+            }
+
+            .product {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            .content {
+            background-color: gainsboro;
+            max-width: 1000px;
+            padding-bottom: 20px;
+            padding: 25px 15px;
+            margin: 10 auto;
+            border-radius: 12px;
+        }
+        .button{
+            font-size: 16px;
+            }
+
+        }
+
+       
+        
+    </style>
+</head>
+
+<body>
+    <div class="flexible">
+        <div class="product">
+            <img src="imgs/clock.jpg" alt="Product Image">
+        </div>
+
+        <div class="content">
+            Garmin Instinct, Rugged Outdoor Watch with GPS, 
+            Features GLONASS and Galileo, Heart Rate Monitoring and
+            3-axis Compass, Tundra<br><br>
+            <div class="wrap">
+                <a href="">
+                    <button class="button">Add to Cart</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

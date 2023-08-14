@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .menu {
+        background-color: black;
+        color: white;
+        text-align: center;
+        width: 30%;
+      }
+      .content {
+        background-color: gainsboro;
+        width: 60%;
+      }
+      .ads {
+        background-color: cornflowerblue;
+        width: 10%;
+      }
+      .flex {
+        display: flex;
+      }
+      @media (max-width: 480px) {
+        .flex {
+          display: block;
+        }
+        .menu {
+          width: auto;
+        }
+        .content {
+          width: auto;
+        }
+        .ads {
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div class="menu">Menu1<br />Menu2<br />Menu3<br /></div>
+      <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quae
+        fuga earum itaque! Voluptatibus saepe incidunt cum perspiciatis magni
+        delectus distinctio quae beatae explicabo repellat repellendus
+        quibusdam, harum corrupti natus.
+      </div>
+      <div class="ads">ads1<br />ads2<br />ads3<br /></div>
+    </div>
+  </body>
+</html>
