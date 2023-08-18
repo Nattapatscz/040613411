@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function adddata(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name");
+            var user_name = name.value;
+            var address = document.getElementById("address");
+            var user_address = address.value;
+            var tel = document.getElementById("tel");
+            var user_tel = tel.value;
+
+            var tr = document.createElement("tr");
+
+            var td_name = document.createElement("td");
+            td_name.textContent = user_name;
+            tr.appendChild(td_name);
+
+            var td_address = document.createElement("td");
+            td_address.textContent = user_address;
+            tr.appendChild(td_address);
+
+            var td_tel = document.createElement("td");
+            td_tel.textContent = user_tel;
+            tr.appendChild(td_tel);
+
+            var table = document.getElementById("showdata");
+            table.appendChild(tr);
+
+            // Clear input fields
+            name.value = "";
+            address.value = "";
+            tel.value = "";
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="adddata(event)">
+         <label>
+             ชื่อลูกค้า:
+             <input type="text" id="name" placeholder="ชื่อ">
+         </label>
+         <br/>
+         <label>
+             ที่อยู่:
+             <input type="text" id="address" placeholder="ที่อยู่">
+         </label>
+         <br/>
+         <label>
+             โทรศัพท์:
+             <input type="text" id="tel" placeholder="โทรศัพท์">
+         </label>
+         <br/>
+         <input type="submit" value="เพิ่ม">
+    </form> 
+    <br />
+     <table border="1">
+        <tr>
+            <th>ชื่อลูกค้า</th>
+            <th>ที่อยู่</th>
+            <th>เบอร์</th>
+        </tr>
+        <tbody id="showdata">
+            
+        </tbody>
+     </table>
+</body>
+</html>
