@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const countTheword = (str) => {
+        let  word =  "the";
+        let result = 0;
+
+       
+
+        for (let i = 0; i < str.length; i++) {
+            let len = 0;
+            for (let j = 0; j < word.length; j++) {
+                if (word[j] === str[i + j].toLowerCase()) {
+                    len++;
+                    if(len == 3){
+                        result++;
+                    }
+                }else{
+                    len = 0;
+                    break;
+                }
+            }
+        }
+
+        alert(`มีคำว่า "the" ทั้งหมด ${result} คำ`);
+
+      };
+    </script>
+    <style>
+      a {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    The eighth ruler of the Fifth Dynasty in the late 25th century<br /><br />
+    <a href="#" onclick="countTheword('The eighth ruler of the Fifth Dynasty in the late 25th century')"">Click for count 'the'</a>
+  </body>
+</html>

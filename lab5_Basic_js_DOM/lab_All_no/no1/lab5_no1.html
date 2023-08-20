@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .green-text {
+        color: green;
+      }
+    </style>
+    <script>
+      const handleOnclick = () => {
+        event.preventDefault();
+        let num1 = document.getElementById("num1");
+        num1 = parseInt(num1.value);
+
+        let num2 = document.getElementById("num2");
+        num2 = parseInt(num2.value);
+
+        let r = num1 + num2;
+
+        let result = document.getElementById("result");
+        result.value = r;
+      };
+    </script>
+    <style>
+      input {
+        width: 50px;
+      }
+      button:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="handleOnclick()">
+      <input id="num1" type="text" />
+      +
+      <input id="num2" type="text" />
+      =
+      <input id="result" type="text" />
+      <button>Go Go</button>
+    </form>
+  </body>
+</html>

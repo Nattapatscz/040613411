@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+  </head>
+  <body>
+    <form id="dataForm">
+      <label for="Name">Name: </label>
+      
+      <input type="text" id="name" name="inputField" />
+      <br />
+      <label for="Name">Age: </label>
+      
+      <input type="text" id="age" name="inputField" />
+      <br />
+      <label for="Name">Birthday: </label>
+      <input type="text" id="birthday" name="inputField" />
+      <br />
+    </form>
+
+    <script>
+      const name = document.getElementById("name");
+      const age = document.getElementById("age");
+      const birthday = document.getElementById("birthday");
+
+      name.addEventListener("input", () => {
+        const inputData = name.value;
+
+        name.style.color = "green";
+      });
+      age.addEventListener("input", () => {
+        const inputData = age.value;
+        age.style.color = "green";
+      });
+      birthday.addEventListener("input", () => {
+        const inputData = birthday.value;
+        birthday.style.color = "green";
+      });
+    </script>
+  </body>
+</html>

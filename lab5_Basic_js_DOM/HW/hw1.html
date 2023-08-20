@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script>
+      function checkPassword() {
+
+        let username = document.getElementById("username");
+
+        let pass1 = document.getElementById("pass1");
+
+        let pass2 = document.getElementById("pass2");
+
+        username = username.value;
+        pass1 = pass1.value;
+        pass2 = pass2.value;
+        console.log(pass1);
+        console.log(pass2);
+
+        let p = document.createElement("p");
+
+        const isNull = (p1, p2) => {
+          if ((p1 && p2) != "") {
+            return true;
+          } else {
+            return false;
+          }
+        };
+
+        if (pass1 === pass2 && isNull(pass1, pass2)) {
+          p.innerHTML = "Correct";
+        } else {
+          p.style.color = "red";
+          p.innerHTML = "Incorrect";
+        }
+        let errormsg = document.getElementById("errormsg");
+        errormsg.appendChild(p);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Register</h1>
+    
+        Username: <input id="username" ="text" />
+        <br />
+        Password: <input type="text" id="pass1" />
+        <br />
+        Re-type Password: <input type="text" id="pass2" />
+        <br />
+
+        <input type="submit" onclick="checkPassword()" />
+
+    <div id="errormsg"></div>
+  </body>
+</html>

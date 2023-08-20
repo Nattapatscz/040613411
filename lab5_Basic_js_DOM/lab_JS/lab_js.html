@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let students = [
+        {
+          fullname: "นายตั้งใจ เรียนมาก",
+          age: 18,
+          year: 1,
+          gpa: 3.4,
+          help: true,
+        },
+        {
+          fullname: "นายส่งงาน ตลอดมา",
+          age: 19,
+          year: 2,
+          gpa: 3.0,
+          help: false,
+        },
+        {
+          fullname: "นางสาว ใส่ใจ ดีงาม",
+          age: 20,
+          year: 3,
+          gpa: 2.9,
+          help: true,
+        },
+      ];
+
+      const helpWork = (help) => {
+        if (help == true) {
+          return "และยังช่วยงานภาควิชาด้วย";
+        } else {
+          return "และยังไม่ได้ช่วยงานภาควิชา";
+        }
+      };
+
+      let studentScholarship = [];
+
+      for (let i in students) {
+        let year = 2566;
+
+        if (
+          students[i].gpa > 3.2 ||
+          (students[i].year >= 2 &&
+            students[i].help == true &&
+            students[i].gpa > 2.75)
+        ) {
+          console.log(
+            `${students[i].fullname} เกิดเมื่อปี ${
+              year - students[i].age
+            } ได้รับทุนการศึกษาเนื่องจากเกรดเฉลี่ยถึงเกณฑ์${helpWork(
+              students[i].help
+            )}`
+          );
+          studentScholarship.push(students[i]);
+        } else {
+          console.log(
+            `${students[i].fullname} เกิดเมื่อปี ${
+              year - students[i].age
+            } ไม่ได้ได้รับทุนการศึกษาเนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์${helpWork(
+              students[i].help
+            )}`
+          );
+        }
+      }
+
+      for (let i = 1; i <= 4; i++) {
+        console.log(`ชั้นปีที่ ${i} `);
+        for (let j = 0; j < studentScholarship.length; j++) {
+          if (studentScholarship[j].year == i) {
+            console.log(
+              `${
+                studentScholarship[j].fullname
+              } เนื่องจากเกรดเฉลี่ยถึงเกณฑ์${helpWork(
+                studentScholarship[j].help
+              )}`
+            );
+          } else {
+            console.log(`ไม่มี`);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <h5 id="fullname"></h5><br/> -->
+  </body>
+</html>
