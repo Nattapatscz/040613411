@@ -1,0 +1,133 @@
+3
+SELECT 
+	name , mobile,email 
+FROM 
+	member;
+-----------------------------------------
+4.
+SELECT 
+	pname , price 
+FROM 
+	product 
+WHERE 
+	price > 500 and price < 1000;
+-----------------------------------------
+5.
+SELECT 
+	name 
+FROM 
+	member 
+WHERE 
+	name 
+LIKE 
+	'บ%';
+-----------------------------------------
+6.
+
+SELECT 
+	*FROM member  
+WHERE 
+	email LIKE '%@gmail%' 
+ORDER BY 
+	username DESC;
+-----------------------------------------
+7.
+
+SELECT 
+	orders.ord_date , member.name  
+FROM 
+	orders , member 
+WHERE 
+	orders.username = member.username;
+-----------------------------------------
+8. 
+SELECT
+    orders.username,
+    orders.ord_date,
+    SUM(product.price * item.quantity) AS total_amount
+FROM
+    orders
+JOIN
+    item ON orders.ord_id = item.ord_id
+JOIN
+    product ON item.pid = product.pid
+GROUP BY
+    orders.username,
+    orders.ord_date
+ORDER BY
+    orders.ord_date;
+-----------------------------------------
+9.
+SELECT
+    product.pname AS product_name,
+    COUNT(item.tid) AS total_quantity_sold
+FROM
+    product
+LEFT JOIN
+    item ON product.pid = item.pid
+GROUP BY
+    product.pname
+ORDER BY
+    total_quantity_sold DESC;
+-----------------------------------------
+10.
+SELECT
+    product.pname AS product_name,
+    orders.ord_date AS order_date
+FROM
+    product
+JOIN
+    item ON product.pid = item.pid
+JOIN
+    orders ON item.ord_id = orders.ord_id
+ORDER BY
+    product.pname,
+    orders.ord_date;
+-----------------------------------------
+11.
+SELECT
+    product.pname AS product_name,
+    SUM(product.price * item.quantity) AS total_amount
+FROM
+    product
+JOIN
+    item ON product.pid = item.pid
+GROUP BY
+    product.pname
+ORDER BY
+    product_name;
+-----------------------------------------
+12
+SELECT
+    member.username,
+    member.name AS member_name,
+    SUM(product.price * item.quantity) AS total_amount
+FROM
+    member
+JOIN
+    orders ON member.username = orders.username
+JOIN
+    item ON orders.ord_id = item.ord_id
+JOIN
+    product ON item.pid = product.pid
+GROUP BY
+    member.username,
+    member_name
+ORDER BY
+    total_amount DESC;
+-----------------------------------------
+13
+SELECT
+    DATE(orders.ord_date) AS order_date,
+    SUM(product.price * item.quantity) AS total_amount
+FROM
+    orders
+JOIN
+    item ON orders.ord_id = item.ord_id
+JOIN
+    product ON item.pid = product.pid
+GROUP BY
+    order_date
+ORDER BY
+    order_date;
+-----------------------------------------
