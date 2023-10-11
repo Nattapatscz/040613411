@@ -4,7 +4,7 @@ include "connect.php";
 
 if (empty($_SESSION["username"])) {
     header("location: login-form.php");
-    exit(); // Terminate the script
+    exit(); // Terminate the scrip
 }
 
 if ($_SESSION["role"] === "admin") {
