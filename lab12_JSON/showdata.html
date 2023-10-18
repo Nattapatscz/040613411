@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>รายชื่อโรงพยาบาล</title>
+</head>
+<body>
+    <h1>รายชื่อโรงพยาบาลที่มีเตียงน้อยกว่า 100 เตียง</h1>
+    <ul id="result">
+        
+    </ul>
+
+    <script>
+        async function getDataFromAPI() {
+            try {
+                let response = await fetch('https://data.go.th/dataset/296f32c6-8c7e-4a54-ade0-0913d35d3168/resource/d132638d-a243-4829-aed8-10ed4fad917f/download/priv_hos.json');
+                let rawData = await response.text();
+                let objectData = JSON.parse(rawData);
+
+                let result = document.getElementById('result');
+                let i = 1; // Initialize the counter here
+
+                objectData.features.forEach(feature => {
+                    let hospitalName = feature.properties.name;
+                    let numBeds = feature.properties.num_bed;
+
+                    if (numBeds < 100) {
+                        let p = document.createElement('p');
+                        p.innerHTML = `${i} ชื่อโรงพยาบาล: ${hospitalName} (เตียง ${numBeds} เตียง)`;
+                        result.appendChild(p);
+                        i++; // Increment the counter
+                    }
+                });
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
+        }
+
+        getDataFromAPI(); // Call the function to fetch and display data
+    </script>
+</body>
+</html>
